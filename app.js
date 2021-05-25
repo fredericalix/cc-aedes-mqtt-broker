@@ -19,7 +19,8 @@ const persistence = aedesPersistenceRedis({
     password: config.REDIS_PASSWORD, // Redis password
     db: config.REDIS_DATABASE, // Redis database (1)
     maxSessionDelivery: 100, // maximum offline messages deliverable on client CONNECT, default is 1000
-    packetTTL: function (packet) { // offline message TTL, default is disabled
+    // eslint-disable-next-line no-unused-vars
+    packetTTL: function (_packet) { // offline message TTL, default is disabled
         return 10 // in seconds
     }
 })
@@ -36,7 +37,7 @@ const helloClever = http.createServer(function (req, res) {
     
     }
     else
-        res.end('404 ;\)');
+        res.end('404 ;)');
 });
 
 const aedes = require("aedes")({

@@ -13,5 +13,8 @@
     "aedes-persistence-redis": "^8.0.1",
     "dotenv": "^10.0.0",
     "mqemitter-redis": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0"
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // Env variables to configure the broker
 
 const envConf = require('dotenv');
