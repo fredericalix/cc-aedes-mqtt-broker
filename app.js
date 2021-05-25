@@ -54,11 +54,14 @@ aedes.authenticate = function (client, username, password, callback) {
 // create server
 const options = {
     key: config.PRIVATE_KEY,
-    cert: config.PUBLIC_CERT
+    cert: config.PUBLIC_CERT,
+    ca: config.CA,
+    requestCert: true,
+    rejectUnauthorized: true
 }
 
 //const server = require('net').createServer(aedes.handle)
-const server = require('tls').createServer(options, aedes.handle);
+const server = require("tls").createServer(options, aedes.handle);
 server.listen(config.MQTT_PORT, function () {
     console.log('start Mqtt with Redis Persistance');
 })
@@ -73,22 +76,22 @@ aedes.on('connectionError', function (client, err) {
 
 aedes.on('publish', function (packet, client) {
     if (client) {
-        console.log('message from client', client.id)
+        console.log('message from client', client.id);
     }
     switch (packet.topic) {
         case 'test':
-            return console.log('test get : ' + packet.payload.toString())
+            return console.log('test get : ' + packet.payload.toString());
     }
 })
 
 aedes.on('subscribe', function (subscriptions, client) {
     if (client) {
-        console.log('subscribe from client', subscriptions, client.id)
+        console.log('subscribe from client', subscriptions, client.id);
     }
 })
 
 aedes.on('client', function (client) {
-    console.log('new client', client.id)
+    console.log('new client', client.id);
 })
 
 helloClever.listen(config.PORT);

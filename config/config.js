@@ -14,7 +14,8 @@ let {
     MQTT_USER,
     MQTT_PASSWORD,
     PRIVATE_KEY,
-    PUBLIC_CERT
+    PUBLIC_CERT,
+    CA
 } = process.env;
 
 module.exports = {
@@ -27,5 +28,6 @@ module.exports = {
     REDIS_DATABASE,
     REDIS_PORT,
     PRIVATE_KEY,
-    PUBLIC_CERT
+    PUBLIC_CERT,
+    CA
 }
