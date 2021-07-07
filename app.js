@@ -92,7 +92,11 @@ aedes.on('subscribe', function (subscriptions, client) {
 })
 
 aedes.on('client', function (client) {
-    console.log('new client', client.id);
+    console.log('new client: ', client.id);
+})
+
+aedes.on('clientDisconnect', function (client) {
+    console.log('client disconnected: ', client.id);
 })
 
 helloClever.listen(config.PORT);
