@@ -57,8 +57,8 @@ const options = {
     key: config.PRIVATE_KEY,
     cert: config.PUBLIC_CERT,
     ca: config.CA,
-    requestCert: true,
-    rejectUnauthorized: true
+    requestCert: config.REQUEST_CERT,
+    rejectUnauthorized: config.REJECT_UNAUTHORIZED,
 }
 
 //const server = require('net').createServer(aedes.handle)
