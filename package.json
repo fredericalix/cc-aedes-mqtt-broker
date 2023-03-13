@@ -9,12 +9,12 @@
   "author": "Frederic Alix",
   "license": "MIT",
   "dependencies": {
-    "aedes": "^0.46.0",
-    "aedes-persistence-redis": "^8.0.1",
-    "dotenv": "^10.0.0",
-    "mqemitter-redis": "^4.1.0"
+    "aedes": "^0.49.0",
+    "aedes-persistence-redis": "^9.0.2",
+    "dotenv": "^16.0.3",
+    "mqemitter-redis": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.27.0"
+    "eslint": "^8.36.0"
   }
 }
