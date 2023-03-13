@@ -13,12 +13,7 @@ let {
     REDIS_DATABASE,
     REDIS_PORT,
     MQTT_USER,
-    MQTT_PASSWORD,
-    PRIVATE_KEY,
-    PUBLIC_CERT,
-    REQUEST_CERT,
-    REJECT_UNAUTHORIZED,
-    CA
+    MQTT_PASSWORD
 } = process.env;
 
 module.exports = {
@@ -29,10 +24,5 @@ module.exports = {
     REDIS_HOST,
     REDIS_PASSWORD,
     REDIS_DATABASE,
-    REDIS_PORT,
-    PRIVATE_KEY,
-    PUBLIC_CERT,
-    REQUEST_CERT,
-    REJECT_UNAUTHORIZED,
-    CA
+    REDIS_PORT
 }

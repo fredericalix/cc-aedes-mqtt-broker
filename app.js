@@ -53,15 +53,8 @@ aedes.authenticate = function (client, username, password, callback) {
 }
 
 // create server
-const options = {
-    key: config.PRIVATE_KEY,
-    cert: config.PUBLIC_CERT,
-    ca: config.CA,
-    requestCert: config.REQUEST_CERT,
-    rejectUnauthorized: config.REJECT_UNAUTHORIZED,
-}
 
-const server = require("tls").createServer(options, aedes.handle);
+const server = require('net').createServer(aedes.handle)
 server.listen(config.MQTT_PORT, function () {
     console.log('start Mqtt with Redis Persistance');
 })
