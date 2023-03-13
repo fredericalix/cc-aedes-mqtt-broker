@@ -47,7 +47,7 @@ const aedes = require("aedes")({
 
 //  authenticate user / password
 aedes.authenticate = function (client, username, password, callback) {
-    var authorized = (username == config.MQTT_USER && password.toString() == config.MQTT_PASSWORD);
+    let authorized = (username == config.MQTT_USER && password.toString() == config.MQTT_PASSWORD);
     if (authorized) client.user = username;
     callback(null, authorized);
 }
@@ -61,7 +61,6 @@ const options = {
     rejectUnauthorized: config.REJECT_UNAUTHORIZED,
 }
 
-//const server = require('net').createServer(aedes.handle)
 const server = require("tls").createServer(options, aedes.handle);
 server.listen(config.MQTT_PORT, function () {
     console.log('start Mqtt with Redis Persistance');
